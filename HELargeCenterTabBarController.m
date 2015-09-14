@@ -67,6 +67,11 @@
 
 #pragma mark - Center Support
 
+// WWG 2015-09-14 - Convenience method, to maintain API compatability for existing clients when adding the "allowSwitch" parameter. (below)
+- (void)addCenterButtonWithUnselectedImage:(UIImage*)unselectedImage selectedImage:(UIImage*)selectedImage target:(id)target action:(SEL)action {
+	[self addCenterButtonWithUnselectedImage:unselectedImage selectedImage:selectedImage target:target action:action allowSwitch:YES];
+}
+
 // Hsoi 2014-07-30 - main public API for setting up the center button.
 //
 // The unselected and selected images are required. target/action is optional, if you want to do something special when the

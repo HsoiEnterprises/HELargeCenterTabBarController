@@ -47,6 +47,7 @@ If we need it that someone external needs to delegateness, then we can work that
 @interface HELargeCenterTabBarController : UITabBarController  <UITabBarControllerDelegate>
 
 - (void)addCenterButtonWithUnselectedImage:(UIImage*)unselectedImage selectedImage:(UIImage*)selectedImage target:(id)target action:(SEL)action;
+- (void)addCenterButtonWithUnselectedImage:(UIImage*)unselectedImage selectedImage:(UIImage*)selectedImage target:(id)target action:(SEL)action allowSwitch:(BOOL)allowSwitch;
 
 @property (nonatomic, readonly) UIViewController*       centerViewController;
 

@@ -163,8 +163,7 @@
     }
 }
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
-{
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
 	BOOL returnValue = YES;
 
 	if ([self centerViewController] == viewController && NO == self.allowSwitch) {

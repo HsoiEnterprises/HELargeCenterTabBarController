@@ -43,6 +43,7 @@
 
 @property (nonatomic, strong)   id                  buttonTarget;
 @property (nonatomic, assign)   SEL                 buttonAction;
+@property (nonatomic, assign)	BOOL				allowSwitch;
 
 @end
 
@@ -70,7 +71,7 @@
 //
 // The unselected and selected images are required. target/action is optional, if you want to do something special when the
 // button is selected (generally not needed).
-- (void)addCenterButtonWithUnselectedImage:(UIImage*)unselectedImage selectedImage:(UIImage*)selectedImage target:(id)target action:(SEL)action {
+- (void)addCenterButtonWithUnselectedImage:(UIImage*)unselectedImage selectedImage:(UIImage*)selectedImage target:(id)target action:(SEL)action allowSwitch:(BOOL)allowSwitch {
     NSParameterAssert(unselectedImage != nil);
     NSParameterAssert(selectedImage != nil);
     NSParameterAssert(self.delegate == self);  // it should already be, but in case someone removes it... don't do that!
@@ -80,6 +81,7 @@
     self.buttonImageSelected = selectedImage;
     self.buttonTarget = target;
     self.buttonAction = action;
+	self.allowSwitch = allowSwitch;
     
     UIButton*   strongCenterButton = self.centerButton;
     if (strongCenterButton) {
@@ -114,8 +116,10 @@
 // Hsoi 2014-07-30 - Private action for the center button. This takes care of ensuring things are right internally and that
 // we can fake out the tab controller internals. Then invoking the user's action, if any.
 - (IBAction)centerButtonAction:(id)sender {
-    self.selectedViewController = self.centerViewController;
-    
+	if (self.allowSwitch) {
+		self.selectedViewController = self.centerViewController;
+	}
+
     if (self.buttonTarget && self.buttonAction) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -159,6 +163,16 @@
     }
 }
 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+	BOOL returnValue = YES;
+
+	if ([self centerViewController] == viewController && NO == self.allowSwitch) {
+		returnValue = NO;
+	}
+
+	return returnValue;
+}
 
 
 #pragma mark - Overrides

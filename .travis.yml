@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode7
+notifications:
+  email: 
+    - hsoi@hsoienterprises.com
+script:
+    - xcodebuild -project HELargeCenterTabBarController.xcodeproj -scheme HELargeCenterTabBarController -sdk iphonesimulator9.0 build

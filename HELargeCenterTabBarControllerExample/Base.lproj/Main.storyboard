@@ -5,6 +5,43 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
+        <!--Modal View Controller-->
+        <scene sceneID="LiZ-nU-Pk2">
+            <objects>
+                <viewController id="F3E-dy-m86" customClass="ModalViewController" customModule="HELargeCenterTabBarController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Scn-ot-hqd"/>
+                        <viewControllerLayoutGuide type="bottom" id="sse-sd-KfF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KnB-jN-BxW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-FN-uAz">
+                                <rect key="frame" x="216" y="289" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rgq-FN-uAz" firstAttribute="centerY" secondItem="KnB-jN-BxW" secondAttribute="centerY" id="Euo-ic-hRd"/>
+                            <constraint firstItem="Rgq-FN-uAz" firstAttribute="centerX" secondItem="KnB-jN-BxW" secondAttribute="centerX" id="aXJ-5p-ypc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Modal View Controller" id="acI-dg-8Rs">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="xhg-3T-mVg">
+                            <connections>
+                                <action selector="dismissMyself:" destination="F3E-dy-m86" id="ctd-eO-gjN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05e-h5-DTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749" y="-1064"/>
+        </scene>
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -84,6 +121,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6og-1Y-tnS">
+            <objects>
+                <navigationController storyboardIdentifier="modalNavViewController" id="m9y-K7-5v7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hNo-wg-GGO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="F3E-dy-m86" kind="relationship" relationship="rootViewController" id="lvM-tb-cUe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgd-N5-tbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-53" y="-1068"/>
         </scene>
         <!--Large Center Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

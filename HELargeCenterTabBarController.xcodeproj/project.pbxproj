@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7901CB9F1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901CB9E1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
+		7901CBA11BAF0768005AE0F5 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901CBA01BAF0768005AE0F5 /* ModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7952AFA41BAEC40F00789C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AF9B1BAEC40F00789C09 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		7952AFA51BAEC40F00789C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9C1BAEC40F00789C09 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		7952AFA61BAEC40F00789C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9D1BAEC40F00789C09 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		7901CB9E1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HELargeCenterTabBarController.swift; path = HELargeCenterTabBarController/HELargeCenterTabBarController.swift; sourceTree = "<group>"; };
+		7901CBA01BAF0768005AE0F5 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		7952AF831BAEC32E00789C09 /* HELargeCenterTabBarController Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HELargeCenterTabBarController Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7952AF9B1BAEC40F00789C09 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7952AF9C1BAEC40F00789C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				7952AFA11BAEC40F00789C09 /* FirstViewController.swift */,
 				7952AFA31BAEC40F00789C09 /* SecondViewController.swift */,
 				7952AFAF1BAEC59800789C09 /* ThirdViewController.swift */,
+				7901CBA01BAF0768005AE0F5 /* ModalViewController.swift */,
 				7952AF9C1BAEC40F00789C09 /* Assets.xcassets */,
 				7952AF9D1BAEC40F00789C09 /* LaunchScreen.storyboard */,
 				7952AF9F1BAEC40F00789C09 /* Main.storyboard */,
@@ -148,6 +151,7 @@
 				7952AFA41BAEC40F00789C09 /* AppDelegate.swift in Sources */,
 				7952AFB01BAEC59800789C09 /* ThirdViewController.swift in Sources */,
 				7952AFA81BAEC40F00789C09 /* FirstViewController.swift in Sources */,
+				7901CBA11BAF0768005AE0F5 /* ModalViewController.swift in Sources */,
 				7901CB9F1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

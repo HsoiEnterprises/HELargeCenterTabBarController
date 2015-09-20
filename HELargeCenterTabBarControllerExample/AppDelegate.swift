@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         if let tabBarController = window?.rootViewController as? HELargeCenterTabBarController {
@@ -23,7 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let unselectedImage = UIImage(named: "tab-unselected"), selectedImage = UIImage(named: "tab-selected") {
-                    tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage, target: nil, action: nil)
+                    
+                    // Hsoi 2015-09-20 - Comment/Uncomment one line or the other to see how `allowSwitch works.
+                    
+                    tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage)
+                    //tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage, target: self, action: "presentSecondViewController:", allowSwitch: false)
                 }
             })
         }
@@ -53,6 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+
+    // MARK: -
+    
+    func presentSecondViewController(sender: AnyObject) {
+        if let rootViewController = window?.rootViewController {
+            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("modalNavViewController")
+            rootViewController.presentViewController(viewController, animated: true, completion: nil)
+        }
+    }
 
 }
 

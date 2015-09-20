@@ -10,15 +10,13 @@
 
 Simple. Lightweight. To-the-point.
 
-<center>
+**Typical Use:**
 ![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/feature/hsoi-swift-pods-etc/HELargeCenterTabBarController-allowSwitchTrue.gif)
-Typical use
-</center>
 
-<center>
+
+**Alternate approach (`allowSwitch = false`)**
 ![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/feature/hsoi-swift-pods-etc/HELargeCenterTabBarController-allowSwitchFalse.gif)
 Alternate approach (`allowSwitch = false`)
-</center>
 
 
 # Supported OS and SDK

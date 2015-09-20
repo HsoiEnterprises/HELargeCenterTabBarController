@@ -8,6 +8,8 @@
 
 `HELargeCenterTabBarController` is a 100% Swift implementation of a `UITabBarController` with a lager center tab.
 
+The center tab can be used in the typical manner where a tap switches to display the associated ViewController, or the center tab can be used in an alternate manner where the tap does not switch ViewControllers but instead executes a target-action.
+
 Simple. Lightweight. To-the-point.
 
 **Typical Use:**
@@ -98,7 +100,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 }
 ```
 
-## Common
+### Common
 
 Assuming you now have instantiated a `HELargeCenterTabBarController` and have a reference to it, you add your button images thusly:
 
@@ -119,11 +121,41 @@ dispatch_async(dispatch_get_main_queue(), { () -> Void in
 ```
 
 
-## other stuff
+## Images
 
-* image discussion
-* allowSwitch
-* target/action
+The images wholly define the look and feel of the center button/tab. The colors, borders, transparency, icons, labels, and most importantly **size of the tab** come 100% from the images.
+
+It is expected to provide two versions of the same image: a selected and an unselected image. The selected image is used when the tab is selected, and cosmetics should reflect a selected state (e.g. "brighter"). The unselected image is used when the tab is not selected, and cosmetics should reflect an unselected state (e.g. dimmer, subdued, disabled).
+
+It's important the two images are the same size and general look and feel, differing only in reflection of (un)selected state. This provides the seemless UI and UX needed to make this control work.
+
+
+## Target-Action
+
+Because the tab is actually implemented as a `UIButton`, a optional target-action is supported for taps on the button. Having a target-action is generally not necessary, if all you desire is typical tab-like functionality, just with the larger-center cosmetics.
+
+One place where target-action is required is if `allowSwitch` is false.
+
+
+## `allowSwitch`
+
+While the controller's typical behavior is to act in a tab-like manner, where tapping the tab button switches the content to the ViewController associated with that tab, setting `allowSwitch` to false will prevent the switch from occurring. The tap still occurs, just no switching occurs. Instead, you will want to install a target-action to execute your behavior.
+
+One reason for this might be that instead of switching to a different tab, a ViewController is presented modally. For example:
+
+```swift
+tabController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage, target: self, action: "presentSecondViewController:", allowSwitch: false)
+
+...
+
+func presentSecondViewController(sender: AnyObject) {
+    if let rootViewController = window?.rootViewController {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("modalNavViewController")
+        rootViewController.presentViewController(viewController, animated: true, completion: nil)
+    }
+}
+
+```
 
 
 # Contact

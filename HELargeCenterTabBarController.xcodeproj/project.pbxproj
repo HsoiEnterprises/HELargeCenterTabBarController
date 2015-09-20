@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7901CB9F1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901CB9E1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		7952AFA41BAEC40F00789C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AF9B1BAEC40F00789C09 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		7952AFA51BAEC40F00789C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9C1BAEC40F00789C09 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		7952AFA61BAEC40F00789C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9D1BAEC40F00789C09 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7952AFA71BAEC40F00789C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9F1BAEC40F00789C09 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7952AFA81BAEC40F00789C09 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFA11BAEC40F00789C09 /* FirstViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7952AFAA1BAEC40F00789C09 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFA31BAEC40F00789C09 /* SecondViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7952AFAE1BAEC51900789C09 /* HELargeCenterTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFAD1BAEC51900789C09 /* HELargeCenterTabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		7952AFB01BAEC59800789C09 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFAF1BAEC59800789C09 /* ThirdViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7901CB9E1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HELargeCenterTabBarController.swift; path = HELargeCenterTabBarController/HELargeCenterTabBarController.swift; sourceTree = "<group>"; };
 		7952AF831BAEC32E00789C09 /* HELargeCenterTabBarController Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HELargeCenterTabBarController Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7952AF9B1BAEC40F00789C09 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7952AF9C1BAEC40F00789C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,9 +27,6 @@
 		7952AFA11BAEC40F00789C09 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		7952AFA21BAEC40F00789C09 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7952AFA31BAEC40F00789C09 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		7952AFAB1BAEC51800789C09 /* HELargeCenterTabBarController Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HELargeCenterTabBarController Example-Bridging-Header.h"; path = "../HELargeCenterTabBarController Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		7952AFAC1BAEC51900789C09 /* HELargeCenterTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HELargeCenterTabBarController.h; sourceTree = "<group>"; };
-		7952AFAD1BAEC51900789C09 /* HELargeCenterTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HELargeCenterTabBarController.m; sourceTree = "<group>"; };
 		7952AFAF1BAEC59800789C09 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,8 +44,7 @@
 		7952AF7A1BAEC32D00789C09 = {
 			isa = PBXGroup;
 			children = (
-				7952AFAC1BAEC51900789C09 /* HELargeCenterTabBarController.h */,
-				7952AFAD1BAEC51900789C09 /* HELargeCenterTabBarController.m */,
+				7901CB9E1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift */,
 				7952AF9A1BAEC40F00789C09 /* HELargeCenterTabBarControllerExample */,
 				7952AF841BAEC32E00789C09 /* Products */,
 			);
@@ -64,7 +61,6 @@
 		7952AF9A1BAEC40F00789C09 /* HELargeCenterTabBarControllerExample */ = {
 			isa = PBXGroup;
 			children = (
-				7952AFAB1BAEC51800789C09 /* HELargeCenterTabBarController Example-Bridging-Header.h */,
 				7952AF9B1BAEC40F00789C09 /* AppDelegate.swift */,
 				7952AFA11BAEC40F00789C09 /* FirstViewController.swift */,
 				7952AFA31BAEC40F00789C09 /* SecondViewController.swift */,
@@ -152,7 +148,7 @@
 				7952AFA41BAEC40F00789C09 /* AppDelegate.swift in Sources */,
 				7952AFB01BAEC59800789C09 /* ThirdViewController.swift in Sources */,
 				7952AFA81BAEC40F00789C09 /* FirstViewController.swift in Sources */,
-				7952AFAE1BAEC51900789C09 /* HELargeCenterTabBarController.m in Sources */,
+				7901CB9F1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +267,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HELargeCenterTabBarControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HELargeCenterTabBarController Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -286,7 +281,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HELargeCenterTabBarControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HELargeCenterTabBarController Example-Bridging-Header.h";
 			};
 			name = Release;
 		};

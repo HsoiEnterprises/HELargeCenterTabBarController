@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // hasn't yet been called). So we'll let things go around the block once and then we'll load it all up.
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                tabBarController.addCenterButtonWithUnselectedImage(UIImage(named: "tab-unselected"), selectedImage: UIImage(named: "tab-selected"), target: nil, action: nil)
+                if let unselectedImage = UIImage(named: "tab-unselected"), selectedImage = UIImage(named: "tab-selected") {
+                    tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage, target: nil, action: nil)
+                }
             })
         }
         

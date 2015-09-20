@@ -89,12 +89,7 @@ class HELargeCenterTabBarController: UITabBarController {
     private var buttonAction: Selector?
     private var allowSwitch: Bool = true
     
-    public func addCenterButton(unselectedImage unselectedImage: UIImage, selectedImage: UIImage, target: AnyObject?, action: Selector?) {
-        addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage, target: target, action: action, allowSwitch: true)
-    }
-
-    
-    public func addCenterButton(unselectedImage unselectedImage: UIImage, selectedImage: UIImage, target: AnyObject?, action: Selector?, allowSwitch: Bool) {
+    public func addCenterButton(unselectedImage unselectedImage: UIImage, selectedImage: UIImage, target: AnyObject? = nil, action: Selector? = nil, allowSwitch: Bool = true) {
         assert(delegate === self, "HELargeCenterTabBarController must be its own delegate")
         delegate = self
         

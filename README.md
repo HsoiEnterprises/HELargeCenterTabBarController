@@ -11,12 +11,12 @@
 Simple. Lightweight. To-the-point.
 
 <center>
-![alt tag](https://raw.githubusercontent.com/hsoienterprises/HELargeCenterTabBarController/develop/HELargeCenterTabBarController-allowSwitchTrue.gif)
+![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/feature/hsoi-swift-pods-etc/HELargeCenterTabBarController-allowSwitchTrue.gif)
 Typical use
 </center>
 
 <center>
-![alt tag](https://raw.githubusercontent.com/hsoienterprises/HELargeCenterTabBarController/develop/HELargeCenterTabBarController-allowSwitchFalse.gif)
+![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/feature/hsoi-swift-pods-etc/HELargeCenterTabBarController-allowSwitchFalse.gif)
 Alternate approach (`allowSwitch = false`)
 </center>
 

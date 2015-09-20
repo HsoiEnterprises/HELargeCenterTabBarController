@@ -6,8 +6,19 @@
 
 # HELargeCenterTabBarController
 
-A UITabBarController with a large center button.
+`HELargeCenterTabBarController` is a 100% Swift implementation of a `UITabBarController` with a lager center tab.
 
+Simple. Lightweight. To-the-point.
+
+<center>
+![alt tag](https://raw.githubusercontent.com/hsoienterprises/HELargeCenterTabBarController/develop/HELargeCenterTabBarController-allowSwitchTrue.gif)
+Typical use
+</center>
+
+<center>
+![alt tag](https://raw.githubusercontent.com/hsoienterprises/HELargeCenterTabBarController/develop/HELargeCenterTabBarController-allowSwitchFalse.gif)
+Alternate approach (`allowSwitch = false`)
+</center>
 
 
 # Supported OS and SDK

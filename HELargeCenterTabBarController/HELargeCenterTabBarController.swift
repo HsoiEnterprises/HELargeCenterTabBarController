@@ -111,32 +111,12 @@ class HELargeCenterTabBarController: UITabBarController {
         }
         let button = UIButton(type: .Custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(button)
+        tabBar.addSubview(button)
 
-        // center button horizontally in view
         view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0));
-        
-        // align button from the bottom
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
-        
-        // width constraint
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
-        
-        // height constraint
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button(==\(unselectedImage.size.height))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
-
-//        button.translatesAutoresizingMaskIntoConstraints = true
-//        button.autoresizingMask = [.FlexibleRightMargin, .FlexibleLeftMargin, .FlexibleBottomMargin, .FlexibleTopMargin] // TODO: convert to autolayout
-//        button.frame = CGRect(x: 0.0, y: 0.0, width: unselectedImage.size.width, height: unselectedImage.size.height)
-//        let heightDifference = unselectedImage.size.height - CGRectGetHeight(tabBar.bounds)
-//        if heightDifference < 0.0 {
-//            button.center = tabBar.center
-//        }
-//        else {
-//            var center = tabBar.center
-//            center.y = center.y - heightDifference / 2.0
-//            button.center = center
-//        }
         
         button.addTarget(self, action: "centerButtonAction:", forControlEvents: .TouchUpInside)
         centerButton = button

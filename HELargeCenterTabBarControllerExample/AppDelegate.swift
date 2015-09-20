@@ -15,7 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        if let tabBarController = window?.rootViewController as? HELargeCenterTabBarController {
+            
+            // Hsoi 2015-09-20 - At this point the OS hasn't yet loaded the tab view (HELargeCenterTabBarController.viewDidLoad() 
+            // hasn't yet been called). So we'll let things go around the block once and then we'll load it all up.
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                tabBarController.addCenterButtonWithUnselectedImage(UIImage(named: "tab-unselected"), selectedImage: UIImage(named: "tab-selected"), target: nil, action: nil)
+            })
+        }
+        
         return true
     }
 

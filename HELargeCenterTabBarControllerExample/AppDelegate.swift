@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import HELargeCenterTabBarController
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

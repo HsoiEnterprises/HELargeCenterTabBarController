@@ -62,6 +62,9 @@ public
 class HELargeCenterTabBarController: UITabBarController {
 
 
+    /**
+    Sets `self` as the delegate.
+    */
     override public func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,12 +72,15 @@ class HELargeCenterTabBarController: UITabBarController {
     }
     
     
+    /// Override to ensure that upon selection, the center button is updated
     override public var selectedViewController: UIViewController? {
         didSet {
             updateCenterButton()
         }
     }
     
+    
+    /// Override to ensure that upon selection, the center button is updated.
     override public var selectedIndex: Int {
         didSet {
             updateCenterButton()
@@ -104,6 +110,7 @@ class HELargeCenterTabBarController: UITabBarController {
             self.centerButton = nil
         }
         let button = UIButton(type: .Custom)
+        button.translatesAutoresizingMaskIntoConstraints = true
         button.autoresizingMask = [.FlexibleRightMargin, .FlexibleLeftMargin, .FlexibleBottomMargin, .FlexibleTopMargin] // TODO: convert to autolayout
         button.frame = CGRect(x: 0.0, y: 0.0, width: unselectedImage.size.width, height: unselectedImage.size.height)
         let heightDifference = unselectedImage.size.height - CGRectGetHeight(tabBar.bounds)
@@ -134,6 +141,7 @@ class HELargeCenterTabBarController: UITabBarController {
     }
     
     
+    /// Obtains the center UIViewController, if any.
     public var centerViewController: UIViewController? {
         if let viewControllers = viewControllers {
             let centerVC = viewControllers[viewControllers.count / 2]
@@ -143,6 +151,9 @@ class HELargeCenterTabBarController: UITabBarController {
     }
     
 
+    /**
+    Ensures the center button cosmetics are correct, regarding the button images.
+    */
     private func updateCenterButton() {
         var buttonImage = buttonImageUnselected
         if selectedViewController === centerViewController {

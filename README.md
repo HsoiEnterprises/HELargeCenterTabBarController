@@ -12,13 +12,12 @@ Simple. Lightweight. To-the-point.
 
 **Typical Use:**
 
-![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/feature/hsoi-swift-pods-etc/HELargeCenterTabBarController-allowSwitchTrue.gif)
+![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/master/HELargeCenterTabBarController-allowSwitchTrue.gif)
 
 
 **Alternate approach (`allowSwitch = false`)**
 
-![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/feature/hsoi-swift-pods-etc/HELargeCenterTabBarController-allowSwitchFalse.gif)
-Alternate approach (`allowSwitch = false`)
+![alt tag](https://raw.githubusercontent.com/HsoiEnterprises/HELargeCenterTabBarController/master/HELargeCenterTabBarController-allowSwitchFalse.gif)
 
 
 # Supported OS and SDK
@@ -66,7 +65,65 @@ $ pod install
 
 # Usage
 
-asdfasdf
+Instantiate the `HELargeCenterTabBarController` either in code or in your storyboard.
+
+## Setup
+
+### Storyboard
+
+* Drag a `UITabBarController` from the Interface Builder Object Library into your Storyboard.
+* Select the `UITabBarController` instance, switch to the "Identity Inspector" tab, and set the custom class to `HELargeCenterTabBarController`.
+  * You may need to set the Module, depending how you added `HELargeCenterTabBarController` to your project.
+* Have some way to obtain a reference to the `HELargeCenterTabBarController` instance, so you can call `addCenterButton()` on it. This could be:
+  * via an `IBOutlet`
+  * As the controller is likely the `appDelegate.window?.rootViewController?`, you could access it that way.
+  
+### Code
+
+In your `application(application:didFinishLaunchingWithOptions:)`:
+
+```swift
+private var tabController: UITabBarController!
+
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+   
+   // create your content view controllers
+   
+   tabController = HELargeCenterTabBarController()
+   tabController.viewControllers = [firstViewController, secondViewController, thirdViewController]
+   // addCenterButton() -- see below
+   window?.rootViewController = tabController
+   
+   return true
+}
+```
+
+## Common
+
+Assuming you now have instantiated a `HELargeCenterTabBarController` and have a reference to it, you add your button images thusly:
+
+```swift
+if let unselectedImage = UIImage(named: "tab-unselected"), selectedImage = UIImage(named: "tab-selected") {
+    tabController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage)
+}
+```
+
+It's important to ensure your call to `addCenterButton()` happens after the `HELargeCenterTabBarController` actually loads (its `viewDidLoad()` is called). Depending upon the timing of how things are created, it you may need to wrap your add in a dispatch_async() to ensure this ordering:
+
+```swift
+dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    if let unselectedImage = UIImage(named: "tab-unselected"), selectedImage = UIImage(named: "tab-selected") {
+        tabBarController.addCenterButton(unselectedImage: unselectedImage, selectedImage: selectedImage)
+    }
+})
+```
+
+
+## other stuff
+
+* image discussion
+* allowSwitch
+* target/action
 
 
 # Contact

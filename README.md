@@ -1,5 +1,5 @@
 ![Build Status](https://travis-ci.org/HsoiEnterprises/HELargeCenterTabBarController.svg)
-![Cocoapods Compatible](https://img.shields.io/cocoapods/v/HELargeCenterTabBarController.svg)
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/HELargeCenterTabBarController.svg)
 ![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 
@@ -31,14 +31,14 @@ Simple. Lightweight. To-the-point.
 
 # Installation
 
-Currently supports being installed by simple source code addition, by git submodule, or by Cocoapods (preferred).
+Currently supports being installed by simple source code addition, by git submodule, or by CocoaPods (preferred).
 
 
 ## Submodule
 
 You can easily obtain git as a submodule, and simply add `HELargeCenterTabBarController.swift` to your project. Off you go!
 
-## Cocoapods
+## CocoaPods
 
 [CocoaPods][CocoaPods] is a dependency manager for Cocoa projects.
 

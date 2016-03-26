@@ -150,7 +150,7 @@ class HELargeCenterTabBarController: UITabBarController {
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button(==\(unselectedImage.size.height))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
         
-        button.addTarget(self, action: "centerButtonAction:", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(centerButtonAction(_:)), forControlEvents: .TouchUpInside)
         centerButton = button
         updateCenterButton()
     }
@@ -161,7 +161,7 @@ class HELargeCenterTabBarController: UITabBarController {
     
     - parameter sender: The sender of the action.
     */
-    @IBAction private func centerButtonAction(sender: AnyObject) {
+    @IBAction dynamic private func centerButtonAction(sender: AnyObject) {
         if allowSwitch {
             selectedViewController = centerViewController
         }

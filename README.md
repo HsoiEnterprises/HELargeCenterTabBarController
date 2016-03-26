@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/HsoiEnterprises/HELargeCenterTabBarController.svg)
+[![Build Status](https://travis-ci.org/HsoiEnterprises/HELargeCenterTabBarController.svg)](https://travis-ci.org/HsoiEnterprises/HELargeCenterTabBarController)
 ![CocoaPods Compatible](https://img.shields.io/cocoapods/v/HELargeCenterTabBarController.svg)
 ![License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
@@ -24,8 +24,8 @@ Simple. Lightweight. To-the-point.
 
 # Supported OS and SDK
 
-- Xcode 7
-- Swift 2.0
+- Xcode 7.3
+- Swift 2.2
 - iOS 8 (minimum, required)
 
 

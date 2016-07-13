@@ -126,7 +126,7 @@ class HELargeCenterTabBarController: UITabBarController {
     - parameter action:          Optional target selector to execute when tapping the center button/tab.
     - parameter allowSwitch:     If true, taps on the center button/tab will select that tab. If false, taps will not select (but target-action will still be executed).
     */
-    public func addCenterButton(unselectedImage unselectedImage: UIImage, selectedImage: UIImage, target: AnyObject? = nil, action: Selector? = nil, allowSwitch: Bool = true) {
+    public func addCenterButton(title: String? = nil, icon: UIImage? = nil, unselectedImage: UIImage, selectedImage: UIImage, target: AnyObject? = nil, action: Selector? = nil, allowSwitch: Bool = true) {
         assert((target == nil && action == nil) || (target != nil && action != nil))
         assert(delegate === self, "HELargeCenterTabBarController must be its own delegate")
         delegate = self
@@ -143,8 +143,10 @@ class HELargeCenterTabBarController: UITabBarController {
         }
         let button = UIButton(type: .Custom)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(icon, forState: .Normal)
+        button.setTitle(title, forState: .Normal)
         tabBar.addSubview(button)
-
+        
         view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0));
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));

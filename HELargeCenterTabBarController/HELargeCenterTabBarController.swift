@@ -91,7 +91,7 @@ class HELargeCenterTabBarController: UITabBarController {
     
     
     /// Reference to the center button. Marked optional, but generally should exist (else what's the point?).
-    weak var centerButton: UIButton?
+    public weak var centerButton: UIButton?
     
     /// Reference to the "selected" version of the button. Marked optional, but generally should exist (else what's the point?).
     private var buttonImageSelected: UIImage?

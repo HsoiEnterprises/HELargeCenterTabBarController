@@ -23,7 +23,7 @@ class ModalViewController: UIViewController {
     
     
     @IBAction func dismissMyself(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     /*

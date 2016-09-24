@@ -24,9 +24,11 @@ Simple. Lightweight. To-the-point.
 
 # Supported OS and SDK
 
-- Xcode 7.3
-- Swift 2.2
+- Xcode 8+
+- Swift 3+
 - iOS 8 (minimum, required)
+
+As of v2.0, only Swift 3 is supported. If you need Swift 2.2 support, use v1.0.1.
 
 
 # Installation

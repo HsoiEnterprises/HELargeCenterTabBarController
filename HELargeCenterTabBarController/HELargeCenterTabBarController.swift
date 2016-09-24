@@ -2,7 +2,7 @@
 //  HELargeCenterTabBarController.swift
 //  Created by hsoi on 2014-07-03, converted to Swift 2015-09-20
 //
-//  HELargeCenterTabBarController - Copyright (c) 2014, 2015, Hsoi Enterprises LLC
+//  HELargeCenterTabBarController - Copyright (c) 2014-2016, Hsoi Enterprises LLC
 //  All rights reserved.
 //  hsoi@hsoienterprises.com
 //

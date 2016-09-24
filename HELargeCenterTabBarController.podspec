@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                 = 'HELargeCenterTabBarController'
-  spec.version              = '1.0.1'
+  spec.version              = '2.0.0'
   spec.homepage             = 'https://github.com/HsoiEnterprises/HELargeCenterTabBarController'
   spec.source               = { :git => 'https://github.com/HsoiEnterprises/HELargeCenterTabBarController.git', :tag => "v#{spec.version}" }
   spec.summary              = 'A Swift UITabBarController with a larger center tab.'

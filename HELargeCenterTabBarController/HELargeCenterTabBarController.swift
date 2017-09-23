@@ -2,7 +2,7 @@
 //  HELargeCenterTabBarController.swift
 //  Created by hsoi on 2014-07-03, converted to Swift 2015-09-20
 //
-//  HELargeCenterTabBarController - Copyright (c) 2014, 2015, Hsoi Enterprises LLC
+//  HELargeCenterTabBarController - Copyright (c) 2014-2016, Hsoi Enterprises LLC
 //  All rights reserved.
 //  hsoi@hsoienterprises.com
 //
@@ -60,14 +60,14 @@ unselected. If for some reason you must use the same image for both states, then
 pass the same `UIImage` for both states.
 */
 
-public
+open
 class HELargeCenterTabBarController: UITabBarController {
 
 
     /**
     Sets `self` as the delegate.
     */
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         delegate = self
@@ -75,7 +75,7 @@ class HELargeCenterTabBarController: UITabBarController {
     
     
     /// Override to ensure that upon selection, the center button is updated
-    override public var selectedViewController: UIViewController? {
+    override open var selectedViewController: UIViewController? {
         didSet {
             updateCenterButton()
         }
@@ -83,7 +83,7 @@ class HELargeCenterTabBarController: UITabBarController {
     
     
     /// Override to ensure that upon selection, the center button is updated.
-    override public var selectedIndex: Int {
+    override open var selectedIndex: Int {
         didSet {
             updateCenterButton()
         }
@@ -91,22 +91,22 @@ class HELargeCenterTabBarController: UITabBarController {
     
     
     /// Reference to the center button. Marked optional, but generally should exist (else what's the point?).
-    private weak var centerButton: UIButton?
+    fileprivate weak var centerButton: UIButton?
     
     /// Reference to the "selected" version of the button. Marked optional, but generally should exist (else what's the point?).
-    private var buttonImageSelected: UIImage?
+    fileprivate var buttonImageSelected: UIImage?
     
     /// Reference to the "unselected" version of the button. Marked optional, but generally should exist (else what's the point?).
-    private var buttonImageUnselected: UIImage?
+    fileprivate var buttonImageUnselected: UIImage?
     
     /// Reference to the action target. Optional, as the button doesn't have to have a target-action behavior.
-    private var buttonTarget: AnyObject?
+    fileprivate var buttonTarget: AnyObject?
     
     /// Reference to the action selector. Optional, as the button doesn't haev to have a target-action behavior.
-    private var buttonAction: Selector?
+    fileprivate var buttonAction: Selector?
     
     /// Does tapping/selecting the center button allow the tab controller to actually switch to that tab or not? Generally if set to false, the target-action should be set so as to have some response to the button tap.
-    private var allowSwitch: Bool = true
+    fileprivate var allowSwitch: Bool = true
     
     
     /**
@@ -126,7 +126,7 @@ class HELargeCenterTabBarController: UITabBarController {
     - parameter action:          Optional target selector to execute when tapping the center button/tab.
     - parameter allowSwitch:     If true, taps on the center button/tab will select that tab. If false, taps will not select (but target-action will still be executed).
     */
-    public func addCenterButton(unselectedImage unselectedImage: UIImage, selectedImage: UIImage, target: AnyObject? = nil, action: Selector? = nil, allowSwitch: Bool = true) {
+    public func addCenterButton(unselectedImage: UIImage, selectedImage: UIImage, target: AnyObject? = nil, action: Selector? = nil, allowSwitch: Bool = true) {
         assert((target == nil && action == nil) || (target != nil && action != nil))
         assert(delegate === self, "HELargeCenterTabBarController must be its own delegate")
         delegate = self
@@ -141,16 +141,25 @@ class HELargeCenterTabBarController: UITabBarController {
             centerButton.removeFromSuperview()
             self.centerButton = nil
         }
-        let button = UIButton(type: .Custom)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         tabBar.addSubview(button)
-
-        view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0));
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button(==\(unselectedImage.size.height))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
         
-        button.addTarget(self, action: #selector(centerButtonAction(_:)), forControlEvents: .TouchUpInside)
+        if #available(iOS 11.0, *) {
+            NSLayoutConstraint.activate([
+                button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                button.widthAnchor.constraint(equalToConstant: unselectedImage.size.width),
+                button.heightAnchor.constraint(equalToConstant: unselectedImage.size.height)
+            ])
+        } else {
+            view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button(==\(unselectedImage.size.height))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
+        }
+        
+        button.addTarget(self, action: #selector(centerButtonAction(_:)), for: .touchUpInside)
         centerButton = button
         updateCenterButton()
     }
@@ -161,19 +170,19 @@ class HELargeCenterTabBarController: UITabBarController {
     
     - parameter sender: The sender of the action.
     */
-    @IBAction dynamic private func centerButtonAction(sender: AnyObject) {
+    @IBAction dynamic fileprivate func centerButtonAction(_ sender: AnyObject) {
         if allowSwitch {
             selectedViewController = centerViewController
         }
         
-        if let buttonTarget = buttonTarget, buttonAction = buttonAction {
-            buttonTarget.performSelector(buttonAction, withObject: sender)
+        if let buttonTarget = buttonTarget, let buttonAction = buttonAction {
+            let _ = buttonTarget.perform(buttonAction, with: sender)
         }
     }
     
     
     /// Obtains the center UIViewController, if any.
-    public var centerViewController: UIViewController? {
+    open var centerViewController: UIViewController? {
         if let viewControllers = viewControllers {
             let centerVC = viewControllers[viewControllers.count / 2]
             return centerVC
@@ -185,14 +194,14 @@ class HELargeCenterTabBarController: UITabBarController {
     /**
     Ensures the center button cosmetics are correct, regarding the button images.
     */
-    private func updateCenterButton() {
+    fileprivate func updateCenterButton() {
         var buttonImage = buttonImageUnselected
         if selectedViewController === centerViewController {
             buttonImage = buttonImageSelected
         }
         
         if let centerButton = centerButton {
-            centerButton.setBackgroundImage(buttonImage, forState: .Normal)
+            centerButton.setBackgroundImage(buttonImage, for: UIControlState())
         }
     }
 
@@ -203,7 +212,7 @@ class HELargeCenterTabBarController: UITabBarController {
 private typealias TabBarControllerDelegate = HELargeCenterTabBarController
 extension TabBarControllerDelegate: UITabBarControllerDelegate {
 
-    public func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+    public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if tabBarController === self {
             if viewController === centerViewController {
                 if let centerButton = centerButton {
@@ -217,7 +226,7 @@ extension TabBarControllerDelegate: UITabBarControllerDelegate {
     }
     
     
-    public func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         var should = true
         if centerViewController === viewController && !allowSwitch {
             should = false

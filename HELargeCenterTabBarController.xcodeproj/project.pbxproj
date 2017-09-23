@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7901CBA11BAF0768005AE0F5 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901CBA01BAF0768005AE0F5 /* ModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7901CBA11BAF0768005AE0F5 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901CBA01BAF0768005AE0F5 /* ModalViewController.swift */; };
 		7901CBAA1BAF16F0005AE0F5 /* HELargeCenterTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7901CBA91BAF16F0005AE0F5 /* HELargeCenterTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7901CBAE1BAF16F0005AE0F5 /* HELargeCenterTabBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7901CBA71BAF16F0005AE0F5 /* HELargeCenterTabBarController.framework */; };
 		7901CBAF1BAF16F0005AE0F5 /* HELargeCenterTabBarController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7901CBA71BAF16F0005AE0F5 /* HELargeCenterTabBarController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7901CBB41BAF170D005AE0F5 /* HELargeCenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901CB9E1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
-		7952AFA41BAEC40F00789C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AF9B1BAEC40F00789C09 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		7952AFA51BAEC40F00789C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9C1BAEC40F00789C09 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		7952AFA61BAEC40F00789C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9D1BAEC40F00789C09 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		7952AFA71BAEC40F00789C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9F1BAEC40F00789C09 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		7952AFA81BAEC40F00789C09 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFA11BAEC40F00789C09 /* FirstViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7952AFAA1BAEC40F00789C09 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFA31BAEC40F00789C09 /* SecondViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7952AFB01BAEC59800789C09 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFAF1BAEC59800789C09 /* ThirdViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7901CBB41BAF170D005AE0F5 /* HELargeCenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7901CB9E1BAEDA96005AE0F5 /* HELargeCenterTabBarController.swift */; };
+		7952AFA41BAEC40F00789C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AF9B1BAEC40F00789C09 /* AppDelegate.swift */; };
+		7952AFA51BAEC40F00789C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9C1BAEC40F00789C09 /* Assets.xcassets */; };
+		7952AFA61BAEC40F00789C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9D1BAEC40F00789C09 /* LaunchScreen.storyboard */; };
+		7952AFA71BAEC40F00789C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7952AF9F1BAEC40F00789C09 /* Main.storyboard */; };
+		7952AFA81BAEC40F00789C09 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFA11BAEC40F00789C09 /* FirstViewController.swift */; };
+		7952AFAA1BAEC40F00789C09 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFA31BAEC40F00789C09 /* SecondViewController.swift */; };
+		7952AFB01BAEC59800789C09 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7952AFAF1BAEC59800789C09 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,11 +185,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Hsoi Enterprises LLC";
 				TargetAttributes = {
 					7901CBA61BAF16F0005AE0F5 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					7952AF821BAEC32E00789C09 = {
 						CreatedOnToolsVersion = 7.0;
@@ -289,6 +290,7 @@
 		7901CBB11BAF16F0005AE0F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -300,6 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HELargeCenterTabBarController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -308,6 +311,7 @@
 		7901CBB21BAF16F0005AE0F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -319,6 +323,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HELargeCenterTabBarController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -341,8 +346,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -391,8 +398,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -421,27 +430,29 @@
 		7952AF981BAEC32E00789C09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/HELargeCenterTabBarControllerExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HELargeCenterTabBarControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		7952AF991BAEC32E00789C09 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/HELargeCenterTabBarControllerExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsoienterprises.HELargeCenterTabBarControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -455,6 +466,7 @@
 				7901CBB21BAF16F0005AE0F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7952AF7E1BAEC32D00789C09 /* Build configuration list for PBXProject "HELargeCenterTabBarController" */ = {
 			isa = XCConfigurationList;

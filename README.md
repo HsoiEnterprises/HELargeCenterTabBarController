@@ -24,10 +24,11 @@ Simple. Lightweight. To-the-point.
 
 # Supported OS and SDK
 
-- Xcode 8+
-- Swift 3+
+- Xcode 9+
+- Swift 4+
 - iOS 8 (minimum, required)
 
+As of v2.1, only Swift 4 is supported. If you need Swift 3 support, use v2.0.
 As of v2.0, only Swift 3 is supported. If you need Swift 2.2 support, use v1.0.1.
 
 
@@ -50,7 +51,7 @@ CocoaPods 0.36 adds supports for Swift and embedded frameworks. You can install 
 $ gem install cocoapods
 ```
 
-To integrate HEAlert into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate HELargeCenterTabBarController into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'

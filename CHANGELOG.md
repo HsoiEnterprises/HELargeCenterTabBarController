@@ -1,5 +1,11 @@
 # HELargeCenterTabBarController CHANGELOG
 
+
+## v2.1.0 - 2017-09-23
+
+* Fixing center button position support to better support iPhone X (h/t to @hipwelljo)
+* Xcode 9 and Swift 4 support
+
 ## v2.0.0 - 2016-09-23
 
 * Updated for Swift 3 and Xcode 8. Thank you to @dodgecm

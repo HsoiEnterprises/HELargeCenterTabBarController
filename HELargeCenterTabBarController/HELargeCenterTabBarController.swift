@@ -145,10 +145,10 @@ class HELargeCenterTabBarController: UITabBarController {
         button.translatesAutoresizingMaskIntoConstraints = false
         tabBar.addSubview(button)
         
-        if #available(iOS 11.0, *) {
+        if #available(iOS 9.0, *) {
             NSLayoutConstraint.activate([
-                button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                button.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
+                button.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor),
                 button.widthAnchor.constraint(equalToConstant: unselectedImage.size.width),
                 button.heightAnchor.constraint(equalToConstant: unselectedImage.size.height)
             ])

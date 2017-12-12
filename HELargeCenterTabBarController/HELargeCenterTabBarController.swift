@@ -144,20 +144,20 @@ class HELargeCenterTabBarController: UITabBarController {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         tabBar.addSubview(button)
-        
+      
+        let bottomAnchor: NSLayoutYAxisAnchor
         if #available(iOS 11.0, *) {
-            NSLayoutConstraint.activate([
-                button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                button.widthAnchor.constraint(equalToConstant: unselectedImage.size.width),
-                button.heightAnchor.constraint(equalToConstant: unselectedImage.size.height)
-            ])
+          bottomAnchor = tabBar.safeAreaLayoutGuide.bottomAnchor
         } else {
-            view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0))
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button(==\(unselectedImage.size.height))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
+          bottomAnchor = tabBar.bottomAnchor
         }
+      
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor),
+            button.widthAnchor.constraint(equalToConstant: unselectedImage.size.width),
+            button.heightAnchor.constraint(equalToConstant: unselectedImage.size.height)
+          ])
         
         button.addTarget(self, action: #selector(centerButtonAction(_:)), for: .touchUpInside)
         centerButton = button

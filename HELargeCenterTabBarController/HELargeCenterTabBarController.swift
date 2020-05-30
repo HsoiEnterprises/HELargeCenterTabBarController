@@ -153,10 +153,10 @@ class HELargeCenterTabBarController: UITabBarController {
                 button.heightAnchor.constraint(equalToConstant: unselectedImage.size.height)
             ])
         } else {
-            view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0))
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[button(==\(unselectedImage.size.width))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button(==\(unselectedImage.size.height))]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
+            view.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button]-0-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["button": button]));
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[button(==\(unselectedImage.size.width))]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[button(==\(unselectedImage.size.height))]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["button": button]))
         }
         
         button.addTarget(self, action: #selector(centerButtonAction(_:)), for: .touchUpInside)
@@ -201,7 +201,7 @@ class HELargeCenterTabBarController: UITabBarController {
         }
         
         if let centerButton = centerButton {
-            centerButton.setBackgroundImage(buttonImage, for: UIControlState())
+            centerButton.setBackgroundImage(buttonImage, for: UIControl.State())
         }
     }
 
